@@ -11,12 +11,18 @@ var {Todo} = require('./routes/dbRoutes');
 var app = express();
 // Sets an initial port. We'll use this later in our listener
 var PORT = process.env.PORT || 3000;
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 app.use(express.static("./public"));
+
 var routes = require("./routes/helpers");
+var api = require("./routes/api");
+
 
 app.use("/", routes);
+app.use("/api", api);
 
 // Starting our express server
 app.listen(PORT, function() {

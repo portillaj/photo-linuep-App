@@ -9,7 +9,7 @@ var mime = require('mime');
 //in this case we want all of the files uploaded into uploads folder
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads/')
+    cb(null, './uploads')
   },
   filename: function (req, file, cb) {
     //grabs the file name and mime package will update the extension for us to whatever file it is
@@ -20,17 +20,18 @@ var storage = multer.diskStorage({
 //store the mullter storeage into upload variable
 var upload = multer({ storage: storage });
 
-router.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname + "/../../public/index.html"));
-});
+// router.get("/", function(req, res) {
+//   res.sendFile(path.join(__dirname + "/../../public/index.html"));
+// });
 
 //our post where we would upload our photo and video
-router.post('/upload', upload.single('photos'), function(req,res){
+router.post('/upload/', upload.single("photos"), function(req,res){
   console.log(req.body); //form fields
   /* example output:
   { title: 'abc' }
    */
   console.log(req.file); //form files
+  console.log("clicked Submit");
   /* example output:
             { fieldname: 'upl',
               originalname: 'grumpy.png',
@@ -49,9 +50,8 @@ router.post('/upload', upload.single('photos'), function(req,res){
   //     id: 1
   // }
   //  }).then(function(results){
-       res.redirect("/api");
+  res.redirect('/');
    //});
-
 });
 
 //export our router to the app.js file to run the app

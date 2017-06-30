@@ -32,7 +32,7 @@ class Sidebar extends React.Component {
   <div style={styles.dashboard} className="container-fluid">
   	<div className="row">
   		<div style={styles.sidebar} className="col-sm-3 col-md-2">
-        <img style={styles.logo} src="Orlando-Police-Dept.png"/>
+        <img style={styles.logo} src="/../../public/Orlando-Police-Dept.png"/>
       <div className="mini-submenu">
           <span className="icon-bar"></span>
           <span className="icon-bar"></span>

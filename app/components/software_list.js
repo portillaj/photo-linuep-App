@@ -54,7 +54,7 @@ const appStyles = {
 //start of component
 class Software extends React.Component{
   constructor(props){
-    super(props)
+    super(props);
 
     //objects of apps in the dashboard main panel
     this.state = {
@@ -75,13 +75,15 @@ class Software extends React.Component{
   //start of render function
   render() {
     const createAppItem = (element) => {
-      return <Apps background={element.background} backgroundInfo={element.backgroundInfo} img={element.img} text={element.text} key={element.id} />;
+      return <Apps
+        background={element.background}
+        img={element.img}
+        text={element.text} key={element.id}
+      />;
     };
-
     return (
         <div>
               {this.state.appList.map(createAppItem)}
-
         </div>
     )
   }
