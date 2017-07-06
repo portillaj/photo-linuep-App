@@ -93,6 +93,7 @@ class Input extends React.Component{
         <button style={styles.formBtn} type="file" className="btn btn-primary">Upload</button>
       </a>
         <button style={styles.formBtn} type="submit" className="btn btn-success">Populate</button>
+
         <button style={styles.formBtn} type="submit" className="btn btn-warning">Save</button>
     </form>
 
@@ -112,9 +113,13 @@ class Input extends React.Component{
                  </div>
 
           </div>
+
     </div>
   </div>
 </div>
+<form action='https://api.kairos.com/gallery/view' method='POST'>
+ <button className="btn btn-default" type="button" data-dismiss="modal">api</button>
+</form>
 </div>
   );
 }

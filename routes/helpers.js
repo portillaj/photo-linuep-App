@@ -22,8 +22,7 @@ var upload = multer({ storage: storage });
 
 // router.get("/", function(req, res) {
 //   res.sendFile(path.join(__dirname + "/../../public/index.html"));
-// });
-
+// })
 //our post where we would upload our photo and video
 router.post('/upload/', upload.single("photos"), function(req,res){
   console.log(req.body); //form fields
