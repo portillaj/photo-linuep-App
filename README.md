@@ -1,1 +1,0 @@
-# photo-linuep-App
